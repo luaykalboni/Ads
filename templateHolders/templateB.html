@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .adbox {
+    width: 500px;
+    border: 3px dotted;
+    border-color:#000000;
+    border-radius: 10px;
+    padding:5px 10px 5px 10px;
+    background-color:#a3eaff;
+  }
+     </style>
+    
+<head>
+    <script>
+    var check = function() {
+        var displayText;
+        if(msgInB.text!= null){
+        displayText=msgInB.text[0];
+        for(var i=1;i<msgInB.text.length;i++)
+        {
+            displayText += ' ';
+            displayText +=msgInB.text[i] ;
+        }
+
+        document.getElementById("text").innerHTML= displayText;
+        }
+        if(msgInB.picture!=null){
+        document.getElementById("image").src= msgInB.picture;
+        }    
+    }
+
+    $(document).ready(check);
+    </script>
+</head>
+<body>
+    <div class="adbox">
+    <p id="text"> </p>
+    <img id="image" src=""> 
+    </div>
+</body>
+</html>

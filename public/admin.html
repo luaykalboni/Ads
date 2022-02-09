@@ -1,0 +1,245 @@
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(() => {
+
+            let screen = "";
+            let msgArr = [];
+            let msg = new Object();
+            let msgText = " ";
+            let msgTime = 0;
+            let newScreen = 1
+            let users = [];
+
+
+
+            function editMessages() {
+
+                screen = prompt("enter screen number to edit");
+                if (screen == null)
+                    return;
+
+                $.ajax({
+                    url: "http://localhost:8080/screen=" + screen,
+                    type: "GET",
+                    success: function (arr) {
+                        msgArr = arr;
+                        const choice = prompt("enter 1 to add message, 2 to edit message");
+
+                        if (choice == 2) {
+                            const msgNum = prompt("there are " + msgArr.length + " messages, select message number to edit");
+                            if (msgNum != null) {
+
+                                msg = msgArr[msgNum - 1];
+
+                                msgTime = prompt("current message time is " + msg.length + " enter new length(enter 0 to delete)");
+                                if (msgTime != null) {
+
+                                    msgText = prompt("enter new text for message(enter 0 to delete if new time is 0)");
+
+                                    if(msgText == '0' && msgTime == '0'){
+                                        newScreen = 1;
+                                        update();
+                                        return;
+                                    }
+                                    if (msgText != null) {
+
+                                        newScreen = prompt('current screen is ,' + screen + ' enter new screen for message to be displayed in');
+                                        if (newScreen != null)
+                                            update();
+
+                                    }
+                                }
+                            }
+                        }
+                        if (choice == 1) {
+
+                            msgTime = prompt("Enter message length");
+                            if (msgTime == null) {
+                                return;
+                            }
+
+                            msgText = prompt("enter text for message");
+                            if (msgText == null) {
+                                return;
+                            }
+
+                            update();
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            }
+
+
+            function update() {
+
+                let temp = msg._id;
+                if (temp == undefined) {
+                    temp = 1;
+                }
+
+                $.ajax({
+
+                    url: "http://localhost:8080/updateMessage=" + msgText + '&' + msgTime + '&' + temp + '&' + screen + '&' + newScreen,
+                    type: "GET",
+                    success: () => {
+
+                        $('#outPut').html('data was saved');
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            }
+
+
+            $('#showBttn').click(function () {
+
+                $.ajax({
+
+                    url: "http://localhost:8080/getUsers",
+                    type: "GET",
+                    success: (usrs) => {
+                        users = usrs;
+                        let i = 1;
+                        for (let j = 0; j < usrs.length; j++) {
+                            if (usrs[j] == null)
+                                continue;
+                            else {
+                                $('#showUser' + i).text('Username: ' + usrs[j].userName + ' Password: ' + usrs[j].passWord + ' Connected: ' + usrs[j].connected);
+                                $('#editBttn' + i).show();
+
+                            }
+                            i++;
+                        }
+                        $('#showBttn').hide();
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+
+
+
+            $('#editBttn1').click(function () {
+                let editpass = '';
+                editpass = prompt('What is the new passWord? (enter 0 to delete user)');
+                if (editpass == null)
+                    return;
+
+                $.ajax({
+                    url: "http://localhost:8080/adminEditUser=" + editpass + '&' + users[0]._id,
+                    type: "GET",
+                    success: () => {
+                        alert('User was changed');
+                    }
+                });
+            });
+
+            $('#editBttn2').click(function () {
+                let editpass = '';
+
+                editpass = prompt('What is the new passWord? (enter 0 to delete user)');
+                if (editpass == null)
+                    return;
+
+                $.ajax({
+                    url: "http://localhost:8080/adminEditUser=" + editpass + '&' + users[1]._id,
+                    type: "GET",
+                    success: () => {
+                        alert('User was changed');
+                    }
+                });
+            });
+
+            $('#editBttn3').click(function () {
+                let editpass = '';
+                editpass = prompt('What is the new passWord? (enter 0 to delete user)');
+                if (editpass == null)
+                    return;
+
+                $.ajax({
+                    url: "http://localhost:8080/adminEditUser=" + editpass + '&' + users[2]._id,
+                    type: "GET",
+                    success: () => {
+                        alert('User was changed');
+                    }
+                });
+            });
+
+
+            $('#editMessages').click(editMessages);
+
+
+            $('#adminPassUserChangebtn').click(() => {
+
+                const user = prompt('enter username');
+                if (user == null)
+                    return;
+                const pssWrd = prompt('enter password');
+                if (pssWrd == null)
+                    return;
+
+
+                let newName = prompt('choose new user name');
+                if (newName == null) {
+                    alert('error in information');
+                    return;
+                }
+
+                let newPswrd = prompt('choose new pass word');
+                if (newPswrd == null) {
+                    alert('error in information');
+                    return;
+                }
+
+                $.ajax({
+                    url: "http://localhost:8080/adminPassChange=" + user + '&' + pssWrd + '&' + newName + '&' + newPswrd,
+                    type: "GET",
+                    success: (res) => {
+                        alert(res);
+                    }
+                });
+            });
+
+        });
+    </script>
+    <title>Admin Access</title>
+</head>
+
+<body>
+    <h2>Admin Access</h2>
+
+    <div id="outPut"></div>
+
+    <button id="showBttn">Click here to view Users</button>
+
+    <button id="editMessages">Click here to edit message</button>
+
+    <button id="adminPassUserChangebtn">Click here to change admin's user names and passwords</button>
+
+</body>
+
+<div id='showUser1'> </div>
+
+<button id="editBttn1" hidden='true'>Edit</button>
+
+<div id='showUser2'> </div>
+
+<button id="editBttn2" hidden='true'>Edit</button>
+
+<div id='showUser3'></div>
+
+<button id="editBttn3" hidden='true'>Edit</button>
+
+</body>
+
+</html>

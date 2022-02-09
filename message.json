@@ -1,0 +1,115 @@
+[
+    {
+    "clientId" : "1",    
+    "text" : ["Marry","chrismas","special","offer!"],
+    "picture" :  "Xmass.jfif",
+    "template": "A",
+    "length" : "7",
+    "date" : {
+        "year" : 2022,
+        "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+        "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        "days" : [1,1,1,1,1,1,1],
+        "startHour" : 1,
+        "endHour" : 23
+
+    }
+    },
+    {
+    "clientId" : "2",    
+    "text" : ["Thanks","giving","special","offer!"],
+    "picture" : "Mcdo.jpg",
+    "template": "B",
+    "length" : "6",
+    "date" : {
+        "year" : 2022,
+        "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+        "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        "days" : [1,1,1,1,1,1,1],
+        "startHour" : 1,
+        "endHour" : 23
+    }
+    },
+    {
+        "clientId" : "3",    
+        "text" : ["What","Are","you","doing!"],
+        "picture" :  "Xmass.jfif",
+        "template": "A",
+        "length" : "9",
+        "date" : {
+            "year" : 2022,
+            "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+            "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            "days" : [1,1,1,1,1,1,1],
+            "startHour" : 1,
+            "endHour" : 23
+        }
+        },
+        {
+            "clientId" : "1",    
+            "text" : ["Hi","There","bob","smith!"],
+            "picture" :  "Mcdo.jpg",
+            "template": "A",
+            "length" : "3",
+            "date" : {
+                "year" : 2022,
+                "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+                "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                "days" : [1,1,1,1,1,1,1],
+                "startHour" : 1,
+                "endHour" : 23
+            }
+            },
+            {
+                "clientId" : "1",    
+                "text" : ["today","is","nice","right!"],
+                "picture" :  "Xmass.jfif",
+                "template": "A",
+                "length" : "7",
+                "date" : {
+                    "year" : 2022,
+                    "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+                    "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    "days" : [1,1,1,1,1,1,1],
+                    "startHour" : 1,
+                    "endHour" : 23
+                }
+                },
+                {
+                    "clientId" : "2",    
+                    "text" : ["Marry","chrismas","special","offer!"],
+                    "picture" :  "Xmass.jfif",
+                    "template": "A",
+                    "length" : "1",
+                    "date" : {
+                        "year" : 2022,
+                        "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+                        "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                        "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                        "days" : [1,1,1,1,1,1,1],
+                        "startHour" : 1,
+                        "endHour" : 23
+                    }
+                    },
+                    {
+                        "clientId" : "3",    
+                        "text" : ["Marry","chrismas","special","offer!"],
+                        "picture" :  "Mcdo.jpg",
+                        "template": "A",
+                        "length" : "13",
+                        "date" : {
+                            "year" : 2022,
+                            "month" : [1,1,1,1,1,1,1,1,1,1,1,1],
+                            "startDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                            "endDateDay": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                            "days" : [1,1,1,1,1,1,1],
+                            "startHour" : 1,
+                            "endHour" : 23
+                        }
+                        }
+]
